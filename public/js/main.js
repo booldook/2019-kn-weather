@@ -95,9 +95,9 @@ function weeklyInit(data) {
     date = data.list[i].dt_txt;
     temp = data.list[i].main.temp+" ℃";
     temp2 = data.list[i].main.temp_max+" ℃ / "+data.list[i].main.temp_min+" ℃"
-    html += '<ul>';
-    html += ' <li><img src="'+src+'" class="img"></li>';
-    html += ' <li>';
+    html += '<ul class="clear">';
+    html += ' <li class="icon"><img src="'+src+'" class="img"></li>';
+    html += ' <li class="content">';
     html += '   <div>예보날짜: '+date+'</div>';
     html += '   <div>현재온도: '+temp+'</div>';
     html += '   <div>최고/최저온도: '+temp2+'</div>';
