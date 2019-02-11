@@ -58,11 +58,17 @@ $("#city").change(function(){
   });
 });
 function dailyInit(data) {
+  console.log(data);
+  $("#modal").hide();
   var $daily = $("#daily");
+  var src = "../img/icon/"+data.weather[0].icon+".png";
+  var temp = data.main.temp+" ℃";
+  var temp2 = data.main.temp_max+" ℃ / "+data.main.temp_min+" ℃ / "
   var html = '';
   html += '<ul>';
-  html += '<li><img src="" class="img"></li>';
-  html += '';
+  html += '<li class="icon"><img src="'+src+'" class="img"></li>';
+  html += '<li class="temp">현재평균온도: '+temp+'</li>';
+  html += '<li class="temp2">최고/최저온도: '+temp2+'</li>';
   html += '</ul>';
   $daily.html(html);
 }
