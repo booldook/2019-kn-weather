@@ -17,5 +17,7 @@ li.nav:first-child {z-index:100;}
 
 #city {font-size:1.5rem;}
 #daily {font-size:1.5rem;}
+#daily > ul {margin-top:10%;}
 #daily li {width:90%; margin:auto; padding:0.5rem;}
-#daily .icon {width:50%; margin:2rem auto; padding:10%;}
+#daily .icon {width:50%; max-width:300px; margin:2rem auto;}
+#daily .city_name {text-align:center; font-size:1.5em; color:#03c;}

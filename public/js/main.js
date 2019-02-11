@@ -12,19 +12,24 @@ var option = {
 };
 
 // modal init
-$.ajax({
-  type: "get",
-  url: "../json/city.json",
-  dataType: "json",
-  success: function (data) {
-    var html = '<option value="">도시를 선택하세요.</option>';
-    for(var i in data.cities) {
-      html += '<option value="'+data.cities[i].id+'">';
-      html += data.cities[i].name+' ['+data.cities[i].id+']</option>';
+cityInit();
+function cityInit() {
+  $("#modal").show();
+  $.ajax({
+    type: "get",
+    url: "../json/city.json",
+    dataType: "json",
+    success: function (data) {
+      var html = '<option value="">도시를 선택하세요.</option>';
+      for(var i in data.cities) {
+        html += '<option value="'+data.cities[i].id+'">';
+        html += data.cities[i].name+' ['+data.cities[i].id+']</option>';
+      }
+      $("#city").html(html);
     }
-    $("#city").html(html);
-  }
-});
+  });
+}
+
 
 $(".nav").click(function(){
   var n = $(this).index();
@@ -67,6 +72,8 @@ function dailyInit(data) {
   var html = '';
   html += '<ul>';
   html += '<li class="icon"><img src="'+src+'" class="img"></li>';
+  html += '<li class="city_name">'+$("#city > option:selected").text()+'</li>';
+  html += '<li class="w3-center"><button class="w3-button w3-indigo" onclick="cityInit();">도시선택</button></li>';
   html += '<li class="temp">현재평균온도: '+temp+'</li>';
   html += '<li class="temp2">최고/최저온도: '+temp2+'</li>';
   html += '</ul>';
