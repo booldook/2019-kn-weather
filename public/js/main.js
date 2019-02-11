@@ -72,7 +72,7 @@ function dailyInit(data) {
   var $daily = $("#daily");
   var src = "../img/icon/"+data.weather[0].icon+".png";
   var temp = data.main.temp+" ℃";
-  var temp2 = data.main.temp_max+" ℃ / "+data.main.temp_min+" ℃"
+  var temp2 = data.main.temp_max+" ℃ / "+data.main.temp_min+" ℃ / "
   var html = '';
   html += '<ul>';
   html += '<li class="icon"><img src="'+src+'" class="img"></li>';
@@ -86,4 +86,25 @@ function dailyInit(data) {
 
 function weeklyInit(data) {
   console.log(data);
+  $("#modal").hide();
+  var src, temp, temp2, date;
+  var $weekly = $("#weekly");
+  var html = '<div>';
+  for(var i in data.list) {
+    src = "../img/icon/"+data.list[i].weather[0].icon+".png";
+    date = data.list[0].dt_txt;
+    temp = data.list[i].main.temp+" ℃";
+    temp2 = data.list[i].main.temp_max+" ℃ / "+data.list[i].main.temp_min+" ℃"
+    html += '<ul>';
+    html += ' <li><img src="'+src+'" class="img"></li>';
+    html += ' <li>';
+    html += '   <div>예보날짜: '+date+'</div>';
+    html += '   <div>현재온도: '+temp+'</div>';
+    html += '   <div>최고/최저온도: '+temp2+'</div>';
+    html += ' </li>';
+    html += '</ul>';
+  }
+  html += '</div>';
+  $weekly.html(html);
 }
+
