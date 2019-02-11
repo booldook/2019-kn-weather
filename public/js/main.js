@@ -92,7 +92,7 @@ function weeklyInit(data) {
   var html = '<div>';
   for(var i in data.list) {
     src = "../img/icon/"+data.list[i].weather[0].icon+".png";
-    date = data.list[0].dt_txt;
+    date = data.list[i].dt_txt;
     temp = data.list[i].main.temp+" ℃";
     temp2 = data.list[i].main.temp_max+" ℃ / "+data.list[i].main.temp_min+" ℃"
     html += '<ul>';
