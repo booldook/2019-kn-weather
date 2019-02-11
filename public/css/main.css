@@ -11,13 +11,26 @@ li.nav {width:50%; float:left;
   padding-top:0.75rem; padding-bottom: calc(0.75rem + 5px);
   text-align: center; font-size:1.5rem; border-bottom:none; cursor:pointer; 
   background-color: #fff; position:relative;}
-.cont {border:5px solid #666; height:calc(100% - 5px - 3.75rem); margin-top:-5.5px; position:relative; z-index:50;}
+.cont {border:5px solid #666; height:calc(100% - 5px - 3.75rem); margin-top:-5.5px; position:relative; z-index:50; overflow-y:auto;}
 
 li.nav:first-child {z-index:100;}
 
 #city {font-size:1.5rem;}
 #daily {font-size:1.5rem;}
-#daily > ul {margin-top:10%;}
-#daily li {width:90%; margin:auto; padding:0.5rem;}
-#daily .icon {width:50%; max-width:300px; margin:2rem auto;}
+#daily > ul {margin-top:5%;}
+#daily li {width:50%; margin:auto; padding:0.5rem; text-align:center;}
+#daily .icon {width:50%; max-width:200px; margin:2rem auto;}
 #daily .city_name {text-align:center; font-size:1.5em; color:#03c;}
+
+@media screen and (max-width:1024px) {
+  #daily li {width:60%;}
+}
+@media screen and (max-width:768px) {
+  #daily li {width:70%;}
+}
+@media screen and (max-width:480px) {
+  #daily li {width:80%;}
+}
+@media screen and (max-width:320px) {
+  #daily li {width:90%;}
+}
