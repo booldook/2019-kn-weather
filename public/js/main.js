@@ -22,3 +22,22 @@ $.ajax({
   }
 });
 
+$(".nav").click(function(){
+  var n = $(this).index();
+  $(".nav").css({
+    "color":"#222", 
+    "border-top":"5px solid #fff",
+    "border-right":"5px solid #fff",
+    "border-left":"5px solid #fff",
+  });
+  $(this).css({
+    "color":"#03f", 
+    "border-top":"5px solid #666",
+    "border-right":"5px solid #666",
+    "border-left":"5px solid #666",
+  });
+  $(".cont").hide();
+  $(".cont").eq(n).show();
+});
+$(".nav").eq(0).trigger("click");
+
