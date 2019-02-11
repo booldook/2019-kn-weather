@@ -29,12 +29,14 @@ $(".nav").click(function(){
     "border-top":"5px solid #fff",
     "border-right":"5px solid #fff",
     "border-left":"5px solid #fff",
+    "z-index":10
   });
   $(this).css({
     "color":"#03f", 
     "border-top":"5px solid #666",
     "border-right":"5px solid #666",
     "border-left":"5px solid #666",
+    "z-index":100
   });
   $(".cont").hide();
   $(".cont").eq(n).show();
