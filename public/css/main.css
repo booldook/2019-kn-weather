@@ -1,7 +1,7 @@
 @import 'base.css';
 
 #modal {position: fixed; width: 100%; height: 100%; 
-  background-color: rgba(0,0,0,0.8); display: none;}
+  background-color: rgba(0,0,0,0.8); z-index:200;}
 #modal_cont {width: 80%; margin: 20% auto; color: #f1f1f1;}
 #modal_cont h2 {color: rgb(248, 212, 146); font-weight: bold; 
   text-align: center;}
@@ -11,6 +11,8 @@ li.nav {width:50%; float:left;
   padding-top:0.75rem; padding-bottom: calc(0.75rem + 5px);
   text-align: center; font-size:1.5rem; border-bottom:none; cursor:pointer; 
   background-color: #fff; position:relative;}
-.cont {border:5px solid #666; height:calc(100% - 5px - 3.75rem); margin-top:-5px; position:relative; z-index:50;}
+.cont {border:5px solid #666; height:calc(100% - 5px - 3.75rem); margin-top:-5.5px; position:relative; z-index:50;}
 
 li.nav:first-child {z-index:100;}
+
+#city {font-size:1.5rem;}

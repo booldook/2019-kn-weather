@@ -6,6 +6,10 @@ var apiURL = "https://api.openweathermap.org/data/2.5/";
 var appid = "02efdd64bdc14b279bc91d9247db4722";
 var units = "metric";
 var files = ["weather", "forecast"];
+var option = {
+  appid: appid,
+  units: units
+};
 
 // modal init
 $.ajax({
@@ -43,3 +47,22 @@ $(".nav").click(function(){
 });
 $(".nav").eq(0).trigger("click");
 
+$("#city").change(function(){
+  option.id = $(this).val();
+  $.ajax({
+    type: "get",
+    url: apiURL + files[0],
+    data: option,
+    dataType: "json",
+    success: dailyInit
+  });
+});
+function dailyInit(data) {
+  var $daily = $("#daily");
+  var html = '';
+  html += '<ul>';
+  html += '<li><img src="" class="img"></li>';
+  html += '';
+  html += '</ul>';
+  $daily.html(html);
+}
