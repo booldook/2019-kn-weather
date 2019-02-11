@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ajax 연습1</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <!-- div#modal>h2{날씨앱 v1.0}+div{도시를 선택하세요.}+select#city.w3-select -->
+  <div id="modal">
+    <div id="modal_cont">
+      <h2>날씨앱 v1.0</h2>
+      <select id="city" class="w3-select"></select>
+    </div>
+  </div>
+  <!-- div.wrap>ul.navs>li.nav*2^div#daily.cont{d}+div#weekly.cont{w} -->
+  <div class="wrap">
+    <ul class="navs clear">
+      <li class="nav">현재 날씨</li>
+      <li class="nav">5일간 날씨</li>
+    </ul>
+    <div id="daily" class="cont">daily</div>
+    <div id="weekly" class="cont">weekly</div>
+  </div>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>
